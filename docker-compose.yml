@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: parking_db
+    restart: always
+    environment:
+      POSTGRES_USER: user_parking
+      POSTGRES_PASSWORD: password_123
+      POSTGRES_DB: parking_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  app:
+    build: .
+    container_name: parking_backend
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    environment:
+      DATABASE_HOST: db
+      DATABASE_PORT: 5432
+      DATABASE_USER: user_parking
+      DATABASE_PASSWORD: password_123
+      DATABASE_NAME: parking_db
+    depends_on:
+      - db
+
+volumes:
+  postgres_data:
