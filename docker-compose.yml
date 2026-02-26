@@ -28,6 +28,13 @@ services:
       DATABASE_NAME: parking_db
     depends_on:
       - db
+      - redis
+
+  redis:
+    image: redis:alpine
+    container_name: parking_redis
+    ports:
+      - "6379:6379"
 
 volumes:
   postgres_data:

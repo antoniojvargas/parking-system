@@ -1,9 +1,12 @@
 import { Module } from '@nestjs/common';
+import { APP_INTERCEPTOR } from '@nestjs/core';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { SequelizeModule } from '@nestjs/sequelize';
 import { ConfigModule } from '@nestjs/config';
 import { VehiclesModule } from './vehicles/vehicles.module';
+import { CacheModule, CacheInterceptor } from '@nestjs/cache-manager';
+import { redisStore } from 'cache-manager-redis-yet';
 
 @Module({
   imports: [
@@ -23,9 +26,29 @@ import { VehiclesModule } from './vehicles/vehicles.module';
       synchronize: true,
     }),
 
+    CacheModule.registerAsync({
+      isGlobal: true,
+      useFactory: async () => {
+        const store = await redisStore({
+          socket: {
+            host: 'redis',
+            port: 6379,
+          },
+          ttl: 30,
+        });
+        return { store };
+      },
+    }),
+
     VehiclesModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [
+    AppService,
+    {
+      provide: APP_INTERCEPTOR,
+      useClass: CacheInterceptor,
+    },
+  ],
 })
 export class AppModule {}

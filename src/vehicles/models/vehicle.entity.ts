@@ -18,9 +18,15 @@ export class Vehicle extends Model<Vehicle> {
   @Column({ defaultValue: 'parked' })
   status: string; // 'parked', 'calculating', 'exited'
 
-  @Column({ type: DataType.DATE })
+  @Column({
+    type: DataType.DATE,
+    field: 'entryTime',
+  })
   entryTime: Date;
 
-  @Column({ type: DataType.DATE })
+  @Column({
+    type: DataType.DATE,
+    field: 'exitTime',
+  })
   exitTime: Date;
 }
