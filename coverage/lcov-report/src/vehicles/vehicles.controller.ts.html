@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">78.57% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/14</span>
+                <span class='fraction'>11/14</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">75% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/8</span>
+                <span class='fraction'>6/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">25% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>1/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">75% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/12</span>
+                <span class='fraction'>9/12</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -96,7 +96,7 @@
 <a name='L31'></a><a href='#L31'>31</a>
 <a name='L32'></a><a href='#L32'>32</a>
 <a name='L33'></a><a href='#L33'>33</a>
-<a name='L34'></a><a href='#L34'>34</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L34'></a><a href='#L34'>34</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -104,32 +104,32 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import {</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import {
   Controller,
   Post,
   Body,
@@ -137,28 +137,28 @@
   UseInterceptors,
   Param,
 } from '@nestjs/common';
-<span class="cstat-no" title="statement not covered" >import { CacheInterceptor, CacheKey } from '@nestjs/cache-manager';</span>
-<span class="cstat-no" title="statement not covered" >import { VehiclesService } from './vehicles.service';</span>
-<span class="cstat-no" title="statement not covered" >import { CreateVehicleDto } from './dto/create-vehicle.dto';</span>
+import { CacheInterceptor, CacheKey } from '@nestjs/cache-manager';
+import { VehiclesService } from './vehicles.service';
+import { CreateVehicleDto } from './dto/create-vehicle.dto';
 &nbsp;
 @Controller('vehicles')
-export <span class="cstat-no" title="statement not covered" >class <span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" >VehiclesController </span>{</span></span>
-<span class="fstat-no" title="function not covered" >  constructor(private readonly <span class="cstat-no" title="statement not covered" >v</span>ehiclesService: V</span>ehiclesService) {}
+export class VehiclesController {
+  constructor(private readonly vehiclesService: VehiclesService<span class="branch-1 cbranch-no" title="branch not covered" >) {}</span>
 &nbsp;
   @Post()
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >  create(</span>@Body() createVehicleDto: CreateVehicleDto) {</span>
+<span class="fstat-no" title="function not covered" >  create(</span>@Body() createVehicleDto: CreateVehicleDto<span class="branch-1 cbranch-no" title="branch not covered" >) {</span>
 <span class="cstat-no" title="statement not covered" >    return this.vehiclesService.registerEntry(createVehicleDto);</span>
   }
 &nbsp;
   @UseInterceptors(CacheInterceptor)
   @CacheKey('vehicles_list')
   @Get()
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >  findAll(</span>) {</span>
+<span class="fstat-no" title="function not covered" >  findAll(</span>) {
 <span class="cstat-no" title="statement not covered" >    return this.vehiclesService.findAllParked();</span>
   }
 &nbsp;
   @Post(':id/exit')
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >  exit(</span>@Param('id') id: string) {</span>
+<span class="fstat-no" title="function not covered" >  exit(</span>@Param('id') id: string) {
 <span class="cstat-no" title="statement not covered" >    return this.vehiclesService.registerExit(id);</span>
   }
 }
@@ -169,7 +169,7 @@ export <span class="cstat-no" title="statement not covered" >class <span class="
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-02-27T13:34:31.953Z
+                at 2026-02-27T14:43:45.661Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

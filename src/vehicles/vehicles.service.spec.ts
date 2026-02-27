@@ -19,8 +19,10 @@ describe('VehiclesService', () => {
     del: jest.fn(),
   };
 
+  let module: TestingModule;
+
   beforeEach(async () => {
-    const module: TestingModule = await Test.createTestingModule({
+    module = await Test.createTestingModule({
       providers: [
         VehiclesService,
         {
@@ -38,6 +40,10 @@ describe('VehiclesService', () => {
     // model = module.get<typeof Vehicle>(getModelToken(Vehicle));
   });
 
+  afterEach(async () => {
+    await module.close();
+  });
+
   it('debería estar definido', () => {
     expect(service).toBeDefined();
   });
@@ -45,7 +51,7 @@ describe('VehiclesService', () => {
   describe('registerExit', () => {
     it('debería calcular el costo correctamente para 1 hora ($2)', async () => {
       const entryTime = new Date();
-      entryTime.setHours(entryTime.getHours() - 1); // Hace 1 hora
+      entryTime.setMinutes(entryTime.getMinutes() - 59); // Hace ~59 min (< 1 hora → ceil = 1)
 
       const mockVehicle = {
         plate: 'ABC-123',
